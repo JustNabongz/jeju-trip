@@ -455,6 +455,64 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 body.readonly [data-edit] { display: none !important; }
 
+/* Weather */
+.wx { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; margin-top: 14px; padding: 14px 16px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
+.wx-ic { color: var(--sea); padding-top: 2px; }
+.wx-ic svg { width: 28px; height: 28px; display: block; }
+.wx-main { font-size: 13.5px; color: var(--ink-2); line-height: 1.55; min-width: 0; }
+.wx-main strong { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--ink); }
+.wx-area { color: var(--muted); }
+.wx-flag { grid-column: 2; margin: 4px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--ink); }
+.wx-flag::before { content: ""; display: inline-block; width: 6px; height: 6px; margin: 0 8px 2px 0; border-radius: 50%; background: var(--tang); }
+.wx-src { grid-column: 2; margin: 4px 0 0; font-size: 12px; color: var(--muted); }
+
+/* Trip info */
+.tab-info .tab-k { color: var(--sea); }
+.tab-info[aria-selected="true"] .tab-k { color: var(--sea); }
+.layout.info-view .side { display: none; }
+@media (min-width: 960px) { .layout.info-view { grid-template-columns: minmax(0, 1fr); } }
+.info { display: grid; gap: 34px; }
+.info-h { margin: 0 0 4px; font-family: var(--font-display); font-size: 24px; font-weight: 500; }
+.info-sub { margin: 0 0 12px; font-size: 13.5px; line-height: 1.55; color: var(--muted); max-width: 70ch; }
+.info-sub a { color: var(--sea); }
+.info-cards { display: grid; gap: 12px; }
+@media (min-width: 760px) { .info-cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.info-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.info-card .s-links { margin-top: 0; }
+.ic-kicker { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.ic-title { margin: 3px 0 0; font-family: var(--font-display); font-size: 21px; font-weight: 500; line-height: 1.25; text-wrap: balance; }
+.ic-rows { margin: 0; display: grid; gap: 9px; }
+.ic-rows > div { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 2px 12px; align-items: baseline; }
+.ic-rows dt { font-size: 12.5px; color: var(--muted); }
+.ic-rows dd { margin: 0; font-size: 14.5px; line-height: 1.5; min-width: 0; overflow-wrap: anywhere; }
+.ref { font-family: var(--font-display); font-size: 21px; font-weight: 600; letter-spacing: 0.04em; user-select: all; font-variant-numeric: lining-nums; }
+.addr-ko { font-family: var(--font-ko); font-size: 16.5px; line-height: 1.5; color: var(--ink); user-select: all; }
+.copy { margin-left: 4px; font-size: 12.5px; }
+.ic-note { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-2); }
+.ic-note b { color: var(--ink); font-weight: 600; }
+.shots { display: flex; flex-wrap: wrap; gap: 10px; }
+.shot { display: grid; width: 136px; padding: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface-2); color: var(--ink-2); cursor: zoom-in; text-align: left; }
+.shot img { display: block; width: 100%; height: 92px; object-fit: cover; object-position: top; }
+.shot span { font-size: 12px; line-height: 1.35; padding: 7px 9px; }
+.shot:hover { border-color: var(--line-strong); }
+.shot-dialog { border: 0; padding: 0; background: transparent; color: #FFFFFF; max-width: min(96vw, 1100px); max-height: 94vh; overflow: auto; }
+.shot-dialog::backdrop { background: rgba(10, 12, 14, 0.84); }
+.shot-dialog figure { margin: 0; display: grid; gap: 8px; }
+.shot-dialog img { display: block; max-width: 100%; max-height: 80vh; margin: 0 auto; object-fit: contain; border-radius: 12px; background: #FFFFFF; }
+.shot-dialog figcaption { font-size: 13px; text-align: center; }
+.shot-dialog form { display: flex; justify-content: center; margin-top: 10px; }
+.contacts { list-style: none; margin: 0; padding: 4px 18px; display: grid; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+.contacts li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2px 14px; padding: 11px 0; border-top: 1px solid var(--line); }
+.contacts li:first-child { border-top: 0; }
+.c-name { font-size: 14.5px; color: var(--ink); }
+.c-note { font-size: 12.5px; color: var(--muted); }
+.contacts b { font-family: var(--font-display); font-size: 19px; font-weight: 600; white-space: nowrap; user-select: all; font-variant-numeric: lining-nums; }
+.wx-list { list-style: none; margin: 0 0 4px; padding: 0; display: grid; gap: 8px; }
+.wx-list li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 2px 14px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.wx-day { font-family: var(--font-display); font-size: 17px; line-height: 1.3; }
+.wx-detail { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
+.wx-temp { font-family: var(--font-display); font-size: 19px; white-space: nowrap; font-variant-numeric: lining-nums; }
+
 /* Phones */
 @media (max-width: 560px) {
   body { font-size: 14.5px; }
@@ -474,6 +532,8 @@ body.readonly [data-edit] { display: none !important; }
   .add-row { padding-left: calc(4px + 2.75rem + 22px + 24px); }
   .empty { padding-left: 16px; }
   .f-grid { grid-template-columns: minmax(0, 1fr); }
+  .ic-rows > div { grid-template-columns: minmax(0, 1fr); }
+  .info-card { padding: 16px; }
   .ticket { grid-template-columns: auto minmax(0, 1fr); }
   .ticket > :last-child { grid-column: 2; }
   .ticket > span:last-child:empty { display: none; }
@@ -614,6 +674,11 @@ body.readonly [data-edit] { display: none !important; }
   <p class="foot" id="foot">Drive times: Naver Map car directions with typical traffic. Costs are rough per-person estimates in won. Opening hours and prices change, so check the day before. Edits save to this page for everyone you share it with.</p>
 </div>
 
+<dialog id="shot-dialog" class="shot-dialog" aria-label="Screenshot">
+  <figure><img id="shot-img" alt=""><figcaption id="shot-cap"></figcaption></figure>
+  <form method="dialog"><button type="submit" class="btn">Close</button></form>
+</dialog>
+
 <div id="toast" class="toast" role="status" aria-live="polite" hidden><span id="toast-text"></span><button type="button" id="toast-undo" hidden>Undo</button></div>
 
 <script>
@@ -658,7 +723,7 @@ body.readonly [data-edit] { display: none !important; }
     try { return JSON.parse(localStorage.getItem(PREF_KEY)) || {}; } catch (e) { return {}; }
   }
   function savePrefs() {
-    try { localStorage.setItem(PREF_KEY, JSON.stringify({ day: ui.day, mapMode: ui.mapMode, showIdeas: ui.showIdeas })); } catch (e) {}
+    try { localStorage.setItem(PREF_KEY, JSON.stringify({ day: ui.day, info: !!ui.info, mapMode: ui.mapMode, showIdeas: ui.showIdeas })); } catch (e) {}
   }
 
   function validLat(v) { return v !== null && v !== "" && isFinite(v) && v > 33.05 && v < 33.65; }
@@ -711,6 +776,23 @@ body.readonly [data-edit] { display: none !important; }
   function eff(s) { return s && s.options && s.options.length ? s.options[s.choice != null ? s.choice : 0] : s; }
   function costOf(s) { return s.options && s.options.length ? (eff(s).cost || 0) : (s.cost || 0); }
 
+  function numOr(v, dflt) { return v === null || v === undefined || v === "" || !isFinite(v) ? dflt : Number(v); }
+  function normWeather(w) {
+    if (!w || !Array.isArray(w.days)) return null;
+    return {
+      source: String(w.source || ""), seaSource: String(w.seaSource || ""), updated: String(w.updated || ""),
+      days: w.days.map(function (x) {
+        return {
+          day: String(x.day || ""), date: isoDate(x.date), area: String(x.area || ""),
+          lat: validLat(x.lat) ? Number(x.lat) : null, lng: validLng(x.lng) ? Number(x.lng) : null,
+          am: String(x.am || ""), pm: String(x.pm || ""), cat: /^(sun|partly|cloud|rain|storm)$/.test(x.cat || "") ? x.cat : "",
+          hi: numOr(x.hi, null), lo: numOr(x.lo, null), rain: numOr(x.rain, null), pop: numOr(x.pop, null),
+          wind: numOr(x.wind, null), windMs: numOr(x.windMs, null), wave: numOr(x.wave, null),
+          sunset: /^\d{2}:\d{2}$/.test(x.sunset || "") ? x.sunset : ""
+        };
+      }).filter(function (x) { return x.date; })
+    };
+  }
   function normalize(d) {
     var days = Array.isArray(d.days) && d.days.length ? d.days : [{ title: "Day 1", stops: [] }];
     return {
@@ -721,7 +803,7 @@ body.readonly [data-edit] { display: none !important; }
         return {
           id: f.id || uid(), dir: f.dir === "out" ? "out" : "in", airline: String(f.airline || ""), code: String(f.code || ""),
           from: String(f.from || ""), fromName: String(f.fromName || ""), to: String(f.to || ""), toName: String(f.toName || ""),
-          date: isoDate(f.date), dep: String(f.dep || ""), arr: String(f.arr || ""), warn: String(f.warn || "")
+          date: isoDate(f.date), dep: String(f.dep || ""), arr: String(f.arr || ""), warn: String(f.warn || ""), note: String(f.note || "")
         };
       }),
       stays: (d.stays || []).filter(function (s) { return isoDate(s.checkIn) && isoDate(s.checkOut); }).map(function (s) {
@@ -729,7 +811,8 @@ body.readonly [data-edit] { display: none !important; }
           id: s.id || uid(), name: String(s.name || "Hotel"), ko: String(s.ko || ""),
           naverId: /^\d+$/.test(String(s.naverId || "")) ? String(s.naverId) : "",
           area: String(s.area || ""), checkIn: s.checkIn, checkOut: s.checkOut,
-          lat: validLat(s.lat) ? Number(s.lat) : null, lng: validLng(s.lng) ? Number(s.lng) : null, note: String(s.note || "")
+          lat: validLat(s.lat) ? Number(s.lat) : null, lng: validLng(s.lng) ? Number(s.lng) : null, note: String(s.note || ""),
+          address: String(s.address || ""), phone: String(s.phone || "").replace(/[^0-9+ -]/g, "")
         };
       }),
       cars: (d.cars || []).map(function (c) {
@@ -741,9 +824,14 @@ body.readonly [data-edit] { display: none !important; }
           naverId: /^\d+$/.test(String(c.naverId || "")) ? String(c.naverId) : "",
           kakaoId: /^\d+$/.test(String(c.kakaoId || "")) ? String(c.kakaoId) : "",
           lat: validLat(c.lat) ? Number(c.lat) : null, lng: validLng(c.lng) ? Number(c.lng) : null,
-          hours: String(c.hours || ""), phone: String(c.phone || "").replace(/[^0-9+ -]/g, ""), note: String(c.note || "")
+          hours: String(c.hours || ""), phone: String(c.phone || "").replace(/[^0-9+ -]/g, ""), note: String(c.note || ""),
+          address: String(c.address || ""), shuttle: String(c.shuttle || ""), bring: String(c.bring || "")
         };
       }),
+      contacts: (d.contacts || []).map(function (c) {
+        return { name: String(c.name || ""), number: String(c.number || "").replace(/[^0-9+ -]/g, ""), note: String(c.note || "") };
+      }).filter(function (c) { return c.number; }),
+      weather: normWeather(d.weather),
       alerts: (d.alerts || []).map(function (a) { return { id: a.id || uid(), title: String(a.title || ""), text: String(a.text || ""), resolved: !!a.resolved }; }),
       days: days.map(function (day) {
         return {
@@ -1149,16 +1237,18 @@ body.readonly [data-edit] { display: none !important; }
 
   /* ---------- tabs ---------- */
   function renderTabs() {
-    $("#tabs").innerHTML = state.days.map(function (d, i) {
+    $("#tabs").innerHTML = '<button type="button" class="tab tab-info" role="tab" id="tab-info" aria-selected="' + !!ui.info + '" aria-controls="day" tabindex="' + (ui.info ? 0 : -1) + '" data-act="tab-info">' +
+        '<span class="tab-k">Trip info</span><span class="tab-d">Bookings</span><span class="tab-t">Flights, car, hotels, weather, numbers</span></button>' +
+      state.days.map(function (d, i) {
       var dt = dayDate(i);
-      var sel = i === ui.day;
+      var sel = !ui.info && i === ui.day;
       return '<button type="button" class="tab" role="tab" id="tab-' + i + '" aria-selected="' + sel + '" aria-controls="day" tabindex="' + (sel ? 0 : -1) + '" data-act="tab" data-i="' + i + '">' +
         '<span class="tab-k">Day ' + (i + 1) + '</span>' +
         '<span class="tab-d">' + (dt ? esc(fmtDay(dt)) : d.stops.length + (d.stops.length === 1 ? " stop" : " stops")) + '</span>' +
         '<span class="tab-t">' + esc(d.title) + '</span></button>';
     }).join("");
-    $("#day").setAttribute("aria-labelledby", "tab-" + ui.day);
-    var cur = $("#tab-" + ui.day), box = $("#tabs-scroll");
+    $("#day").setAttribute("aria-labelledby", ui.info ? "tab-info" : "tab-" + ui.day);
+    var cur = ui.info ? $("#tab-info") : $("#tab-" + ui.day), box = $("#tabs-scroll");
     if (cur) {
       var l = cur.offsetLeft - box.offsetLeft, r = l + cur.offsetWidth;
       if (l < box.scrollLeft || r > box.scrollLeft + box.clientWidth) box.scrollLeft = Math.max(0, l - 8);
@@ -1274,6 +1364,9 @@ body.readonly [data-edit] { display: none !important; }
   }
 
   function renderDay() {
+    var lay = $(".layout");
+    if (lay) lay.classList.toggle("info-view", !!ui.info);
+    if (ui.info) { $("#day").innerHTML = infoHTML(); return; }
     var d = state.days[ui.day];
     var dt = dayDate(ui.day);
     var info = dayRows(ui.day), rows = info.rows, legs = dayLegs(rows);
@@ -1301,6 +1394,7 @@ body.readonly [data-edit] { display: none !important; }
           '<span>' + d.stops.length + (d.stops.length === 1 ? " stop" : " stops") + '</span>' +
           (cost ? '<span>≈ ' + esc(won(cost)) + ' per person</span>' : "") + '</p>' +
         (d.note ? '<p class="day-note">' + esc(d.note) + '</p>' : "") +
+        wxHTML(d, dayISO(ui.day)) +
         '<div class="day-actions" data-edit><button type="button" class="link-btn" data-act="edit-day">Edit day</button></div>' +
       '</div>';
     }
@@ -1323,6 +1417,207 @@ body.readonly [data-edit] { display: none !important; }
     var add = addingNew ? "" : '<div class="add-row" data-edit><button type="button" class="btn btn-sm" data-act="add-stop">+ Add a stop</button></div>';
     $("#day").innerHTML = heroHTML(d) + nowNextHTML(ui.day, rows, legs) + head + body + add + planBHTML(d, info);
     $("#legend-day").textContent = "Day " + (ui.day + 1);
+  }
+
+  /* ---------- weather ---------- */
+  var liveWx = null; // a fresher forecast fetched in this browser, on copies outside claude.ai
+  var WX_ICON = {
+    sun: SVG + '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.3M12 19.2v2.3M2.5 12h2.3M19.2 12h2.3M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>',
+    partly: SVG + '<path d="M9 3.5v1.6M3.6 9H2M4.9 4.9 6 6M13.1 4.9 12 6"/><path d="M5.6 11.3A3.6 3.6 0 1 1 11.9 8"/><path d="M8 20h9.5a3.5 3.5 0 0 0 .5-7 5 5 0 0 0-9.6 1.4A2.8 2.8 0 0 0 8 20z"/></svg>',
+    cloud: SVG + '<path d="M7 19h10.5a4 4 0 0 0 .6-8 5.6 5.6 0 0 0-10.8 1.6A3.2 3.2 0 0 0 7 19z"/></svg>',
+    rain: SVG + '<path d="M7 15.5h10.5a4 4 0 0 0 .6-8A5.6 5.6 0 0 0 7.3 9.1 3.2 3.2 0 0 0 7 15.5z"/><path d="M8.5 18.5 7.5 21M12.5 18.5l-1 2.5M16.5 18.5l-1 2.5"/></svg>',
+    storm: SVG + '<path d="M7 15.5h10.5a4 4 0 0 0 .6-8A5.6 5.6 0 0 0 7.3 9.1 3.2 3.2 0 0 0 7 15.5z"/><path d="m12.5 15-2 3.5h3L11.5 22"/></svg>'
+  };
+  // WMO weather codes, as Open-Meteo reports them
+  function wmo(code) {
+    if (code === 0) return ["Clear", "sun"];
+    if (code === 1) return ["Mostly sunny", "sun"];
+    if (code === 2) return ["Partly cloudy", "partly"];
+    if (code === 3) return ["Cloudy", "cloud"];
+    if (code === 45 || code === 48) return ["Fog", "cloud"];
+    if (code >= 51 && code <= 57) return ["Drizzle", "rain"];
+    if (code === 61 || code === 80) return [code === 61 ? "Light rain" : "Light showers", "rain"];
+    if (code === 63 || code === 81) return [code === 63 ? "Rain" : "Showers", "rain"];
+    if (code === 65 || code === 82 || code === 66 || code === 67) return ["Heavy rain", "rain"];
+    if (code >= 95) return ["Thunderstorms", "storm"];
+    return ["", ""];
+  }
+  function wxFor(day, iso) {
+    var w = state.weather;
+    var base = w && w.days.filter(function (x) { return x.date === iso || x.day === day.id; })[0];
+    var live = liveWx && iso && liveWx.days[iso];
+    if (live) return Object.assign({}, base || {}, live, { live: true });
+    return base || null;
+  }
+  function fmtUpdated(iso) {
+    var t = Date.parse(iso);
+    if (!isFinite(t)) return "";
+    var k = new Date(t + 9 * 3600000);
+    return k.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" }) + ", " +
+      String(k.getUTCHours()).padStart(2, "0") + ":" + String(k.getUTCMinutes()).padStart(2, "0") + " Korea time";
+  }
+  function skyText(w) { return w.am && w.pm && w.am !== w.pm ? w.am + ", then " + w.pm.toLowerCase() : (w.am || w.pm || ""); }
+  function wxBits(w) {
+    var bits = [];
+    if (w.lo != null && w.hi != null) bits.push(w.lo === w.hi ? w.hi + "°C" : w.lo + "–" + w.hi + "°C");
+    if (w.rain != null) bits.push(w.rain >= 0.5 ? "about " + (w.rain >= 10 ? Math.round(w.rain) : w.rain) + " mm of rain" : "dry");
+    if (w.pop != null) bits.push(w.pop + "% chance of rain");
+    if (w.wind != null) bits.push("wind up to " + w.wind + " km/h");
+    if (w.sunset) bits.push("sunset " + w.sunset);
+    return bits;
+  }
+  function hasFerry(d) { return d.stops.some(function (s) { return /Udo/.test(s.name) && s.type === "move"; }); }
+  function wxHTML(d, iso) {
+    var w = wxFor(d, iso);
+    if (!w || (!w.am && !w.pm && w.hi == null)) return "";
+    var wet = w.cat === "rain" || w.cat === "storm" || (w.rain != null && w.rain >= 5);
+    var flags = [];
+    if (wet) flags.push('<p class="wx-flag">Rain is forecast.' + (d.planB && d.planB.length ? ' <button type="button" class="link-btn" data-act="open-planb">See Plan B</button> for indoor options.' : "") + '</p>');
+    if (hasFerry(d) && (w.windMs != null || w.wave != null)) {
+      var rough = (w.windMs != null && w.windMs >= 10) || (w.wave != null && w.wave >= 2);
+      var sea = [w.windMs != null ? "wind up to " + w.windMs + " m/s" : "", w.wave != null ? "waves up to " + w.wave + " m" : ""].filter(Boolean).join(" and ");
+      flags.push('<p class="wx-flag">' + (rough ? "Windy for the Udo ferry: " : "The Udo crossing looks fine: ") + esc(sea) +
+        '. Boats are normally only stopped under a wind-wave advisory (wind over 14 m/s or waves over 3 m)' + (rough ? ", but call 064-782-5670 that morning." : ".") + '</p>');
+    }
+    var src = w.live ? "Live forecast from Open-Meteo" : (state.weather.source ? "Forecast from " + state.weather.source : "Forecast") + (state.weather.updated ? ", updated " + fmtUpdated(state.weather.updated) : "");
+    return '<div class="wx' + (wet ? " wet" : "") + '"><div class="wx-ic" aria-hidden="true">' + (WX_ICON[w.cat] || WX_ICON.cloud) + '</div>' +
+      '<div class="wx-main"><strong>' + esc(skyText(w)) + '</strong>' + (w.area ? ' <span class="wx-area">in ' + esc(w.area) + '</span>' : "") +
+      '<div>' + esc(wxBits(w).join(" · ")) + '</div></div>' + flags.join("") +
+      '<p class="wx-src">' + esc(src) + '. Forecasts change, so check again the evening before.</p></div>';
+  }
+  function refreshWeather() {
+    // claude.ai pages can't reach outside services; other copies (GitHub) fetch a fresh forecast here.
+    if (hasClaude || !state || !state.weather) return;
+    var pts = state.weather.days.filter(function (x) { return x.lat != null && x.lng != null; });
+    if (!pts.length) return;
+    var url = "https://api.open-meteo.com/v1/forecast?latitude=" + pts.map(function (x) { return x.lat; }).join(",") +
+      "&longitude=" + pts.map(function (x) { return x.lng; }).join(",") +
+      "&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,wind_speed_10m_max" +
+      "&timezone=Asia%2FSeoul&forecast_days=16";
+    fetch(url).then(function (r) { return r.ok ? r.json() : null; }).then(function (res) {
+      if (!res) return;
+      var list = Array.isArray(res) ? res : [res];
+      var days = {};
+      pts.forEach(function (x, i) {
+        var dd = list[i] && list[i].daily;
+        if (!dd || !dd.time) return;
+        var j = dd.time.indexOf(x.date);
+        if (j < 0 || dd.weather_code[j] == null) return;
+        var t = wmo(dd.weather_code[j]);
+        days[x.date] = { am: t[0], pm: "", cat: t[1], hi: Math.round(dd.temperature_2m_max[j]), lo: Math.round(dd.temperature_2m_min[j]),
+          rain: Math.round(dd.precipitation_sum[j] * 10) / 10, pop: dd.precipitation_probability_max[j], wind: Math.round(dd.wind_speed_10m_max[j]),
+          windMs: Math.round(dd.wind_speed_10m_max[j] / 3.6 * 10) / 10 };
+      });
+      if (Object.keys(days).length) { liveWx = { days: days }; if (!ui.editing) renderDay(); }
+    }).catch(function () {});
+  }
+
+  /* ---------- trip info tab ---------- */
+  var priv = null; // booking numbers and screenshots, published only with the private claude.ai page
+  function copyBtn(v) { return '<button type="button" class="link-btn copy" data-act="copy" data-v="' + esc(v) + '">Copy</button>'; }
+  function row(label, html) { return '<div><dt>' + esc(label) + '</dt><dd>' + html + '</dd></div>'; }
+  function shotsFor(key) {
+    if (!priv) return "";
+    var list = priv.shots.map(function (sh, i) { return { sh: sh, i: i }; }).filter(function (x) { return x.sh.for === key; });
+    if (!list.length) return "";
+    return '<div class="shots">' + list.map(function (x) {
+      return '<button type="button" class="shot" data-act="shot" data-i="' + x.i + '" aria-label="Open screenshot: ' + esc(x.sh.title) + '">' +
+        '<img src="' + esc(x.sh.file) + '" alt="" loading="lazy" width="' + (x.sh.w || 480) + '" height="' + (x.sh.h || 320) + '"><span>' + esc(x.sh.title) + '</span></button>';
+    }).join("") + '</div>';
+  }
+  function privRows(key) {
+    if (!priv) return "";
+    return (priv.refs[key] || []).map(function (r) { return row(r.label, '<span class="ref">' + esc(r.value) + '</span> ' + copyBtn(r.value)); }).join("");
+  }
+  function privFacts(key) {
+    if (!priv) return "";
+    return (priv.facts[key] || []).map(function (t) { return '<p class="ic-note">' + esc(t) + '</p>'; }).join("");
+  }
+  function infoHTML() {
+    var cars = state.cars || [];
+    var flights = state.flights.map(function (f) {
+      var day = f.date ? fmtDay(parseISO(f.date)) : "";
+      return '<article class="info-card"><div><div class="ic-kicker">' + esc(f.airline) + '</div>' +
+        '<h3 class="ic-title">' + esc(f.code) + ' · ' + esc(f.fromName || f.from) + ' to ' + esc(f.toName || f.to) + '</h3></div>' +
+        '<dl class="ic-rows">' + row("Departs", esc(day + ", " + f.dep + " · " + (f.fromName || f.from))) + row("Arrives", esc(f.arr + " · " + (f.toName || f.to))) + privRows(f.id) + '</dl>' +
+        (f.note ? '<p class="ic-note">' + esc(f.note) + '</p>' : "") + privFacts(f.id) + shotsFor(f.id) + '</article>';
+    }).join("");
+    var carCards = cars.map(function (c) {
+      var place = { name: c.branch || c.company, ko: c.ko, naverId: c.naverId, kakaoId: c.kakaoId, lat: c.lat, lng: c.lng };
+      var when = function (d, t) { return (d ? fmtDay(parseISO(d)) : "") + (t ? ", " + t : ""); };
+      return '<article class="info-card"><div><div class="ic-kicker">' + esc(c.company) + '</div><h3 class="ic-title">' + esc(c.model) + (c.fuel ? ' · ' + esc(c.fuel) : "") + '</h3></div>' +
+        '<dl class="ic-rows">' + privRows(c.id) +
+          row("Pick up", esc(when(c.pickDate, c.pickTime))) + row("Booked until", esc(when(c.retDate, c.retTime))) +
+          row("Branch", esc(c.branch) + (c.address ? '<br><span class="addr-ko" lang="ko">' + esc(c.address) + '</span> ' + copyBtn(c.address) : "")) +
+          (c.hours ? row("Open", esc(c.hours) + " every day") : "") + (c.phone ? row("Phone", '<span class="t-tel">' + esc(c.phone) + '</span>') : "") +
+        '</dl>' +
+        (c.shuttle ? '<p class="ic-note"><b>Getting there:</b> ' + esc(c.shuttle) + '</p>' : "") +
+        (c.bring ? '<p class="ic-note"><b>Bring:</b> ' + esc(c.bring) + '</p>' : "") +
+        (c.note ? '<p class="ic-note">' + esc(c.note) + '</p>' : "") + privFacts(c.id) +
+        '<div class="s-links">' + navHTML(place) + mapLinks(place) + '</div>' + shotsFor(c.id) + '</article>';
+    }).join("");
+    var stays = state.stays.map(function (s) {
+      var n = nightsOf(s);
+      return '<article class="info-card"><div><div class="ic-kicker">' + esc(fmtDay(parseISO(s.checkIn))) + ' to ' + esc(fmtDay(parseISO(s.checkOut))) + ' · ' + n + (n === 1 ? " night" : " nights") + '</div>' +
+        '<h3 class="ic-title">' + esc(s.name) + '</h3>' + (s.ko ? '<div class="ko" lang="ko">' + esc(s.ko) + '</div>' : "") + '</div>' +
+        '<dl class="ic-rows">' + (s.address ? row("Address", '<span class="addr-ko" lang="ko">' + esc(s.address) + '</span> ' + copyBtn(s.address)) : "") +
+          (s.phone ? row("Phone", '<span class="t-tel">' + esc(s.phone) + '</span>') : "") + '</dl>' +
+        (s.note ? '<p class="ic-note">' + esc(s.note) + '</p>' : "") + privFacts(s.id) +
+        '<div class="s-links">' + navHTML(s) + mapLinks(s) + '</div>' + shotsFor(s.id) + '</article>';
+    }).join("");
+    var wx = "";
+    if (state.weather) {
+      wx = '<ul class="wx-list">' + state.days.map(function (d, i) {
+        var w = wxFor(d, dayISO(i));
+        if (!w || (!w.am && !w.pm && w.hi == null)) return "";
+        var dt = dayDate(i);
+        return '<li><div class="wx-ic" aria-hidden="true">' + (WX_ICON[w.cat] || WX_ICON.cloud) + '</div>' +
+          '<div><div class="wx-day">' + (dt ? esc(fmtDay(dt)) : "Day " + (i + 1)) + ' · ' + esc(skyText(w)) + '</div>' +
+          '<div class="wx-detail">' + esc([w.area].concat(wxBits(w).slice(1)).filter(Boolean).join(" · ")) + '</div></div>' +
+          '<div class="wx-temp">' + (w.lo != null ? esc(w.lo + "–" + w.hi + "°") : "") + '</div></li>';
+      }).join("") + '</ul>' +
+      '<p class="info-sub">' + esc(liveWx ? "Live forecast from Open-Meteo." : (state.weather.source ? "From " + state.weather.source : "") + (state.weather.updated ? ", updated " + fmtUpdated(state.weather.updated) + "." : ".")) +
+        ' For the official Korean forecast, see <a href="https://www.weather.go.kr/w/index.do" target="_blank" rel="noopener">KMA</a> or the Naver Weather app.</p>';
+    }
+    var contacts = state.contacts.length ? '<ul class="contacts">' + state.contacts.map(function (c) {
+      return '<li><div><div class="c-name">' + esc(c.name) + '</div>' + (c.note ? '<div class="c-note">' + esc(c.note) + '</div>' : "") + '</div><b>' + esc(c.number) + '</b></li>';
+    }).join("") + '</ul>' : "";
+    var more = priv ? shotsFor("places") : "";
+    function sec(title, sub, body, cls) {
+      return body ? '<section class="info-sec"><h3 class="info-h">' + esc(title) + '</h3>' + (sub ? '<p class="info-sub">' + esc(sub) + '</p>' : "") + '<div class="info-cards' + (cls ? " " + cls : "") + '">' + body + '</div></section>' : "";
+    }
+    return '<div class="day-head"><div class="day-kicker"><b>Trip info</b><span>For check-in counters, front desks and taxis</span></div>' +
+      '<h2 class="day-title">Bookings and key details</h2></div>' +
+      '<div class="info">' +
+        sec("Flights", "", flights, "two") +
+        sec("Car", "", carCards) +
+        sec("Hotels", "To get somewhere by taxi, show the driver the Korean address.", stays, "two") +
+        sec("Weather", "", wx) +
+        sec("Phone numbers", "", contacts) +
+        (more ? sec("Saved places", "Your original Google Maps list.", more) : "") +
+        (priv ? "" : '<p class="info-sub">Booking numbers and screenshots aren\'t part of this copy.</p>') +
+      '</div>';
+  }
+  function openShot(i) {
+    var sh = priv && priv.shots[i];
+    var dlg = $("#shot-dialog");
+    if (!sh || !dlg) return;
+    $("#shot-img").src = sh.file; $("#shot-img").alt = sh.title; $("#shot-cap").textContent = sh.title;
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  function copyText(v, btn) {
+    var done = function () { toast("Copied " + v); };
+    var fallback = function () {
+      var el = btn && btn.previousElementSibling;
+      if (el) { var r = document.createRange(); r.selectNodeContents(el); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); }
+      toast("Selected. Use your phone's Copy to copy it.");
+    };
+    try { navigator.clipboard.writeText(v).then(done, fallback); } catch (e) { fallback(); }
+  }
+  function selectInfo() {
+    ui.info = true; ui.editing = null; ui.picking = false; ui.highlight = null;
+    savePrefs();
+    renderTabs(); renderDay(); renderPickHint();
   }
 
   function heroHTML(d) {
@@ -1790,7 +2085,7 @@ body.readonly [data-edit] { display: none !important; }
 
   /* ---------- focus a stop from the map or list ---------- */
   function focusStop(di, id, scroll) {
-    if (di !== ui.day) { ui.day = di; ui.editing = null; ui.picking = false; savePrefs(); renderTabs(); renderDay(); renderPickHint(); }
+    if (di !== ui.day || ui.info) { ui.day = di; ui.info = false; ui.editing = null; ui.picking = false; savePrefs(); renderTabs(); renderDay(); renderPickHint(); }
     ui.highlight = id;
     $$(".stop.hl, .idea.hl").forEach(function (el) { el.classList.remove("hl"); });
     var el = document.getElementById("stop-" + id);
@@ -1809,6 +2104,7 @@ body.readonly [data-edit] { display: none !important; }
   }
 
   function selectDay(i) {
+    ui.info = false;
     ui.day = Math.max(0, Math.min(i, state.days.length - 1));
     ui.editing = null; ui.picking = false; ui.highlight = null;
     savePrefs();
@@ -1844,9 +2140,16 @@ body.readonly [data-edit] { display: none !important; }
     if (a.tagName === "SELECT" || (a.tagName === "INPUT" && a.type === "checkbox")) return; // handled on change
     switch (act) {
       case "tab": selectDay(Number(a.dataset.i)); break;
+      case "tab-info": selectInfo(); break;
+      case "shot": openShot(Number(a.dataset.i)); break;
+      case "copy": copyText(a.dataset.v || "", a); break;
+      case "open-planb":
+        var pb = $(".planb");
+        if (pb) { pb.open = true; ui.planBOpen[pb.dataset.day] = true; pb.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" }); }
+        break;
       case "add-day":
         state.days.push({ id: uid(), title: "Free day", note: "", stops: [] });
-        changed(); ui.day = state.days.length - 1; ui.editing = null; savePrefs(); renderAll();
+        changed(); ui.day = state.days.length - 1; ui.info = false; ui.editing = null; savePrefs(); renderAll();
         break;
       case "edit-day": ui.editing = { kind: "day" }; renderDay(); var t = $("#f-dtitle"); if (t) t.focus(); break;
       case "remove-day":
@@ -1960,8 +2263,11 @@ body.readonly [data-edit] { display: none !important; }
     }
     if (t.getAttribute && t.getAttribute("role") === "tab" && (e.key === "ArrowRight" || e.key === "ArrowLeft")) {
       e.preventDefault();
-      var next = ui.day + (e.key === "ArrowRight" ? 1 : -1);
-      if (next < 0 || next >= state.days.length) return;
+      var right = e.key === "ArrowRight";
+      if (ui.info) { if (right && state.days.length) { selectDay(0); var t0 = $("#tab-0"); if (t0) t0.focus(); } return; }
+      var next = ui.day + (right ? 1 : -1);
+      if (next < 0) { selectInfo(); var ti = $("#tab-info"); if (ti) ti.focus(); return; }
+      if (next >= state.days.length) return;
       selectDay(next);
       var nt = $("#tab-" + next); if (nt) nt.focus();
       return;
@@ -2008,7 +2314,7 @@ body.readonly [data-edit] { display: none !important; }
       state.days[di].stops.push(stop);
       state.days[di].stops = sortStops(state.days[di].stops);
       changed();
-      ui.day = di; ui.editing = null; ui.highlight = stop.id; savePrefs();
+      ui.day = di; ui.info = false; ui.editing = null; ui.highlight = stop.id; savePrefs();
       renderAll();
       toast("Added " + it.name + " to Day " + (di + 1) + ". Set a start time with Edit.", snap);
     }
@@ -2118,7 +2424,16 @@ body.readonly [data-edit] { display: none !important; }
     }).then(function (text) { tripRev = revOf(text); return JSON.parse(text); });
     var routesP = fetch("routes.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
     var photosP = fetch("img/photos.json").then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
-    Promise.all([tripP, routesP, photosP]).then(function (res) {
+    var privP = fetch("private.json", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    Promise.all([tripP, routesP, photosP, privP]).then(function (res) {
+      var pv = res[3];
+      if (pv && typeof pv === "object") {
+        priv = {
+          refs: pv.refs && typeof pv.refs === "object" ? pv.refs : {},
+          facts: pv.facts && typeof pv.facts === "object" ? pv.facts : {},
+          shots: (Array.isArray(pv.shots) ? pv.shots : []).filter(function (x) { return x && /^docs\/[a-z0-9-]+\.(jpg|jpeg|png|webp)$/.test(x.file || ""); })
+        };
+      }
       if (res[2] && typeof res[2] === "object") photos = res[2];
       state = normalize(res[0]);
       if (!hasClaude) {
@@ -2137,6 +2452,7 @@ body.readonly [data-edit] { display: none !important; }
       ui.day = hashDay ? Number(hashDay[1]) - 1 : (typeof p.day === "number" ? p.day : 0);
       var today = tripDayIndex(kstNow().iso);
       if (!hashDay && today >= 0) ui.day = today;
+      ui.info = location.hash === "#info" || (!hashDay && today < 0 && p.info === true);
       ui.day = Math.max(0, Math.min(ui.day, state.days.length - 1));
       ui.mapMode = p.mapMode === "island" ? "island" : "fit";
       ui.showIdeas = p.showIdeas !== false;
@@ -2144,6 +2460,7 @@ body.readonly [data-edit] { display: none !important; }
       $("#notes").value = state.notes;
       setStatus(save.mode === "shared" ? "saved" : save.mode);
       renderAll();
+      refreshWeather();
     }).catch(function () {
       $("#day").innerHTML = '<p class="loading">The itinerary data couldn\'t be loaded. Reload the page to try again.</p>';
       $("#status-text").textContent = "Not loaded";
