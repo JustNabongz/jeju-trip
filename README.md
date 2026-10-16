@@ -4,7 +4,7 @@ Our five-day Jeju road trip, Saturday 17 to Wednesday 21 October 2026, as a sing
 
 ## Opening it
 
-- **As a website:** go to Settings → Pages, choose "Deploy from a branch", then `main` and `/ (root)`. GitHub Pages for a private repo needs a paid GitHub plan, and anyone with the site's link can open it. The page asks search engines not to list it.
+- **Online:** https://justnabongz.github.io/jeju-trip/ is served by GitHub Pages from `main`, so every push to `main` updates it. The page asks search engines not to list it.
 - **On your computer:** download the repo, run `python3 -m http.server` in this folder and open http://localhost:8000. Opening `index.html` straight from disk won't load the plan, because browsers block a local file from reading `trip.json`.
 
 ## What's in here
