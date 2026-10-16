@@ -17,7 +17,7 @@
   --surface-2: #F7F8F6;
   --ink: #1E2428;
   --ink-2: #434C52;
-  --muted: #646D73;
+  --muted: #5A6369;
   --line: #E3E6E1;
   --line-strong: #C9CEC8;
   --sea: #22596B;
@@ -47,7 +47,7 @@
     --surface-2: #1D2226;
     --ink: #ECEEEA;
     --ink-2: #C3C9C9;
-    --muted: #8E979C;
+    --muted: #9DA6AB;
     --line: #272D31;
     --line-strong: #394146;
     --sea: #86BFCF;
@@ -74,7 +74,7 @@
   --surface-2: #1D2226;
   --ink: #ECEEEA;
   --ink-2: #C3C9C9;
-  --muted: #8E979C;
+  --muted: #9DA6AB;
   --line: #272D31;
   --line-strong: #394146;
   --sea: #86BFCF;
@@ -155,6 +155,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .fact dd small { font-family: var(--font-body); font-size: 12.5px; color: var(--muted); }
 .fact input[type="date"] { font-family: var(--font-body); font-size: 13.5px; padding: 4px 10px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); }
 
+.top-tools { display: flex; align-items: center; gap: 8px; }
+.theme-btn { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px 5px 9px; border: 0; border-radius: 999px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); color: var(--ink-2); font-size: 12.5px; font-weight: 500; cursor: pointer; }
+.theme-btn svg { width: 15px; height: 15px; flex: none; }
+.theme-btn:hover { box-shadow: inset 0 0 0 1px var(--line-strong); color: var(--ink); }
 .status { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted); padding: 5px 13px; border-radius: 999px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
 .status .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ok); flex: none; }
 .status[data-state="dirty"] .dot { background: var(--tang); }
@@ -513,9 +517,36 @@ body.readonly [data-edit] { display: none !important; }
 .wx-detail { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
 .wx-temp { font-family: var(--font-display); font-size: 19px; white-space: nowrap; font-variant-numeric: lining-nums; }
 
+.tel { color: var(--sea); font-weight: 600; text-decoration: none; white-space: nowrap; user-select: all; }
+.tel:hover { text-decoration: underline; text-underline-offset: 3px; }
+.contacts .tel { font-family: var(--font-display); font-size: 19px; font-variant-numeric: lining-nums; }
+.links { list-style: none; margin: 0; padding: 4px 18px; display: grid; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+.links li { display: grid; gap: 1px; padding: 11px 0; border-top: 1px solid var(--line); }
+.links li:first-child { border-top: 0; }
+.links a { color: var(--sea); font-size: 15.5px; font-weight: 600; text-decoration: none; }
+.links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.links span { font-size: 13px; color: var(--muted); }
+
+/* Readability: larger running text, roomier links */
+body { font-size: 16px; line-height: 1.6; }
+.s-note { font-size: 15.5px; line-height: 1.65; }
+.s-meta, .opt-line { font-size: 13.5px; }
+.s-links { font-size: 14px; gap: 10px 18px; }
+.s-links a, .link-btn, .pb-actions a { padding-block: 3px; }
+.link-btn { font-size: 14px; }
+.opt-meta { font-size: 14px; }
+.opt-why, .opt-tip, .ic-note, .idea-note { font-size: 14.5px; line-height: 1.6; }
+.leg-body { font-size: 13px; }
+.leg-main { font-size: 15.5px; }
+.day-meta { font-size: 14px; }
+.tab-t { font-size: 13px; }
+.wx-main { font-size: 14.5px; }
+.ic-rows dd { font-size: 15px; }
+.tips dd { font-size: 15px; line-height: 1.6; }
+
 /* Phones */
 @media (max-width: 560px) {
-  body { font-size: 14.5px; }
+  body { font-size: 15.5px; }
   .wrap { padding-block: 24px 56px; }
   .facts { gap: 14px 28px; }
   .fact dd { font-size: 19px; }
@@ -524,7 +555,7 @@ body.readonly [data-edit] { display: none !important; }
   .base, .leg { padding-inline: 4px; }
   .stops::before { left: calc(4px + var(--tcol) + var(--gap) + var(--mk) / 2 - 0.5px); }
   .s-time { font-size: 15px; }
-  .s-name strong { font-size: 18.5px; }
+  .s-name strong { font-size: 19.5px; }
   .s-thumb { width: 78px; border-radius: 10px; }
   .s-head { gap: 8px 10px; }
   .hero { aspect-ratio: 16 / 9; border-radius: 16px; }
@@ -551,7 +582,10 @@ body.readonly [data-edit] { display: none !important; }
   <header>
     <div class="top-row">
       <p class="eyebrow" id="eyebrow"><span lang="ko">제주도</span> · Jeju-do, South Korea</p>
-      <div id="status" class="status" data-state="saved" role="status" aria-live="polite"><span class="dot"></span><span id="status-text">Loading</span></div>
+      <div class="top-tools">
+        <button type="button" class="theme-btn" id="theme-btn" data-act="theme" aria-label="Colour theme: automatic. Tap to change.">Auto</button>
+        <div id="status" class="status" data-state="saved" role="status" aria-live="polite"><span class="dot"></span><span id="status-text">Loading</span></div>
+      </div>
     </div>
     <div id="title-area" class="title-area"><h1 class="trip-title">Jeju Island Itinerary</h1></div>
     <div id="alerts"></div>
@@ -716,14 +750,14 @@ body.readonly [data-edit] { display: none !important; }
   /* ---------- state ---------- */
   var state = null;
   var routes = {}, routesMeta = null, photos = {};
-  var ui = { day: 0, editing: null, highlight: null, mapMode: "fit", showIdeas: true, picking: false, renaming: false, planBOpen: {}, optOpen: {} };
+  var ui = { theme: "auto", day: 0, editing: null, highlight: null, mapMode: "fit", showIdeas: true, picking: false, renaming: false, planBOpen: {}, optOpen: {} };
   var PREF_KEY = "jeju-itinerary-prefs";
 
   function loadPrefs() {
     try { return JSON.parse(localStorage.getItem(PREF_KEY)) || {}; } catch (e) { return {}; }
   }
   function savePrefs() {
-    try { localStorage.setItem(PREF_KEY, JSON.stringify({ day: ui.day, info: !!ui.info, mapMode: ui.mapMode, showIdeas: ui.showIdeas })); } catch (e) {}
+    try { localStorage.setItem(PREF_KEY, JSON.stringify({ theme: ui.theme, day: ui.day, info: !!ui.info, mapMode: ui.mapMode, showIdeas: ui.showIdeas })); } catch (e) {}
   }
 
   function validLat(v) { return v !== null && v !== "" && isFinite(v) && v > 33.05 && v < 33.65; }
@@ -1145,6 +1179,42 @@ body.readonly [data-edit] { display: none !important; }
     bus: SVG + '<rect x="4.5" y="3.5" width="15" height="14" rx="2.5"/><path d="M4.5 10.5h15"/><circle cx="8.5" cy="14.3" r="0.9"/><circle cx="15.5" cy="14.3" r="0.9"/><path d="M7.5 17.5V20M16.5 17.5V20"/></svg>',
     bike: SVG + '<circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l3.6-7H15l3 7"/><path d="M9.6 9L12 16H6"/><path d="M13.5 6.5H16"/></svg>'
   };
+  var THEME_ICON = {
+    auto: SVG + '<circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" stroke="none"/></svg>',
+    light: SVG + '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M5.3 18.7l1.5-1.5M17.2 6.8l1.5-1.5"/></svg>',
+    dark: SVG + '<path d="M19.5 14.6A8 8 0 1 1 9.4 4.5a6.5 6.5 0 0 0 10.1 10.1z"/></svg>'
+  };
+  var THEME_NAME = { auto: "Auto", light: "Light", dark: "Dark" };
+  var rootTheme = document.documentElement.getAttribute("data-theme"); // the claude.ai viewer may set this
+  function applyTheme(t) {
+    ui.theme = THEME_NAME[t] ? t : "auto";
+    var r = document.documentElement;
+    if (ui.theme === "auto") { if (rootTheme) r.setAttribute("data-theme", rootTheme); else r.removeAttribute("data-theme"); }
+    else r.setAttribute("data-theme", ui.theme);
+    var b = $("#theme-btn");
+    if (b) {
+      b.innerHTML = THEME_ICON[ui.theme] + "<span>" + THEME_NAME[ui.theme] + "</span>";
+      b.setAttribute("aria-label", "Colour theme: " + (ui.theme === "auto" ? "matches your device" : THEME_NAME[ui.theme].toLowerCase()) + ". Tap to change.");
+      b.title = ui.theme === "auto" ? "Matches your device. Tap for light." : ui.theme === "light" ? "Light. Tap for dark." : "Dark. Tap to match your device.";
+    }
+  }
+  function telHref(n) {
+    var d = String(n).replace(/[^0-9+]/g, "");
+    if (/^0\d/.test(d)) return "tel:+82" + d.slice(1);
+    if (d === "1330") return "tel:+8221330";
+    return "tel:" + d;
+  }
+  function telLink(n) { return '<a class="tel" href="' + telHref(n) + '">' + esc(n) + '</a>'; }
+  var LINKS = [
+    ["Scoot: manage your booking", "https://www.flyscoot.com/en/manage-booking", "Online check-in, bags and seats"],
+    ["T'way Air", "https://www.twayair.com", "My bookings and check-in"],
+    ["LOTTE rent-a-car, in English", "https://www.lotterentacar.net/hp/eng/main/index.do", "Pre-check-in and your reservation"],
+    ["Changi Airport", "https://www.changiairport.com/en.html", "Terminal 2 and flight status"],
+    ["Jeju International Airport", "https://www.airport.co.kr/jeju/", "Arrivals and departures"],
+    ["Korea Meteorological Administration", "https://www.weather.go.kr/w/index.do", "The official Korean forecast"],
+    ["Visit Jeju", "https://www.visitjeju.net/en", "Jeju's official tourism site"]
+  ];
+  var AIRLINE_LINK = { "Scoot": LINKS[0][1], "T'way Air": LINKS[1][1] };
   function navLink(p) {
     return hasLoc(p) ? "https://map.kakao.com/link/to/" + encodeURIComponent(String(p.ko || p.name).replace(/[,/]/g, " ")) + "," + p.lat + "," + p.lng : "";
   }
@@ -1326,6 +1396,7 @@ body.readonly [data-edit] { display: none !important; }
         (s.note ? '<p class="s-note">' + esc(s.note) + '</p>' : "") +
         (s.weather ? '<p class="s-weather"><b>Weather</b>' + esc(s.weather) + '</p>' : "") +
         '<div class="s-links">' + navHTML(s) + stopLinks(s) +
+          (s.type === "stay" || /TW166|TR829|LOTTE/.test(s.name) ? '<button type="button" class="link-btn" data-act="tab-info">' + (s.type === "stay" ? "Hotel details" : "Booking details") + '</button>' : "") +
           '<label class="visit"><input type="checkbox" data-act="done" data-id="' + esc(s.id) + '"' + (s.done ? " checked" : "") + (save.mode === "readonly" ? " disabled" : "") + '> Visited</label>' +
           '<button type="button" class="link-btn" data-act="edit-stop" data-id="' + esc(s.id) + '" data-edit>Edit</button>' +
         '</div>' +
@@ -1540,7 +1611,9 @@ body.readonly [data-edit] { display: none !important; }
       return '<article class="info-card"><div><div class="ic-kicker">' + esc(f.airline) + '</div>' +
         '<h3 class="ic-title">' + esc(f.code) + ' · ' + esc(f.fromName || f.from) + ' to ' + esc(f.toName || f.to) + '</h3></div>' +
         '<dl class="ic-rows">' + row("Departs", esc(day + ", " + f.dep + " · " + (f.fromName || f.from))) + row("Arrives", esc(f.arr + " · " + (f.toName || f.to))) + privRows(f.id) + '</dl>' +
-        (f.note ? '<p class="ic-note">' + esc(f.note) + '</p>' : "") + privFacts(f.id) + shotsFor(f.id) + '</article>';
+        (f.note ? '<p class="ic-note">' + esc(f.note) + '</p>' : "") + privFacts(f.id) +
+        (AIRLINE_LINK[f.airline] ? '<div class="s-links"><a href="' + AIRLINE_LINK[f.airline] + '" target="_blank" rel="noopener">' + (f.airline === "Scoot" ? "Manage booking on Scoot" : "T'way Air website") + '</a></div>' : "") +
+        shotsFor(f.id) + '</article>';
     }).join("");
     var carCards = cars.map(function (c) {
       var place = { name: c.branch || c.company, ko: c.ko, naverId: c.naverId, kakaoId: c.kakaoId, lat: c.lat, lng: c.lng };
@@ -1549,19 +1622,19 @@ body.readonly [data-edit] { display: none !important; }
         '<dl class="ic-rows">' + privRows(c.id) +
           row("Pick up", esc(when(c.pickDate, c.pickTime))) + row("Booked until", esc(when(c.retDate, c.retTime))) +
           row("Branch", esc(c.branch) + (c.address ? '<br><span class="addr-ko" lang="ko">' + esc(c.address) + '</span> ' + copyBtn(c.address) : "")) +
-          (c.hours ? row("Open", esc(c.hours) + " every day") : "") + (c.phone ? row("Phone", '<span class="t-tel">' + esc(c.phone) + '</span>') : "") +
+          (c.hours ? row("Open", esc(c.hours) + " every day") : "") + (c.phone ? row("Phone", telLink(c.phone)) : "") +
         '</dl>' +
         (c.shuttle ? '<p class="ic-note"><b>Getting there:</b> ' + esc(c.shuttle) + '</p>' : "") +
         (c.bring ? '<p class="ic-note"><b>Bring:</b> ' + esc(c.bring) + '</p>' : "") +
         (c.note ? '<p class="ic-note">' + esc(c.note) + '</p>' : "") + privFacts(c.id) +
-        '<div class="s-links">' + navHTML(place) + mapLinks(place) + '</div>' + shotsFor(c.id) + '</article>';
+        '<div class="s-links">' + navHTML(place) + mapLinks(place) + '<a href="' + LINKS[2][1] + '" target="_blank" rel="noopener">LOTTE website</a></div>' + shotsFor(c.id) + '</article>';
     }).join("");
     var stays = state.stays.map(function (s) {
       var n = nightsOf(s);
       return '<article class="info-card"><div><div class="ic-kicker">' + esc(fmtDay(parseISO(s.checkIn))) + ' to ' + esc(fmtDay(parseISO(s.checkOut))) + ' · ' + n + (n === 1 ? " night" : " nights") + '</div>' +
         '<h3 class="ic-title">' + esc(s.name) + '</h3>' + (s.ko ? '<div class="ko" lang="ko">' + esc(s.ko) + '</div>' : "") + '</div>' +
         '<dl class="ic-rows">' + (s.address ? row("Address", '<span class="addr-ko" lang="ko">' + esc(s.address) + '</span> ' + copyBtn(s.address)) : "") +
-          (s.phone ? row("Phone", '<span class="t-tel">' + esc(s.phone) + '</span>') : "") + '</dl>' +
+          (s.phone ? row("Phone", telLink(s.phone)) : "") + '</dl>' +
         (s.note ? '<p class="ic-note">' + esc(s.note) + '</p>' : "") + privFacts(s.id) +
         '<div class="s-links">' + navHTML(s) + mapLinks(s) + '</div>' + shotsFor(s.id) + '</article>';
     }).join("");
@@ -1580,7 +1653,7 @@ body.readonly [data-edit] { display: none !important; }
         ' For the official Korean forecast, see <a href="https://www.weather.go.kr/w/index.do" target="_blank" rel="noopener">KMA</a> or the Naver Weather app.</p>';
     }
     var contacts = state.contacts.length ? '<ul class="contacts">' + state.contacts.map(function (c) {
-      return '<li><div><div class="c-name">' + esc(c.name) + '</div>' + (c.note ? '<div class="c-note">' + esc(c.note) + '</div>' : "") + '</div><b>' + esc(c.number) + '</b></li>';
+      return '<li><div><div class="c-name">' + esc(c.name) + '</div>' + (c.note ? '<div class="c-note">' + esc(c.note) + '</div>' : "") + '</div>' + telLink(c.number) + '</li>';
     }).join("") + '</ul>' : "";
     var more = priv ? shotsFor("places") : "";
     function sec(title, sub, body, cls) {
@@ -1593,7 +1666,10 @@ body.readonly [data-edit] { display: none !important; }
         sec("Car", "", carCards) +
         sec("Hotels", "To get somewhere by taxi, show the driver the Korean address.", stays, "two") +
         sec("Weather", "", wx) +
-        sec("Phone numbers", "", contacts) +
+        sec("Phone numbers", "Tap a number to call. From your phone, the Korea Travel Hotline is +82 2 1330.", contacts) +
+        sec("Links", "", '<ul class="links">' + LINKS.map(function (l) {
+          return '<li><a href="' + l[1] + '" target="_blank" rel="noopener">' + esc(l[0]) + '</a><span>' + esc(l[2]) + '</span></li>';
+        }).join("") + '</ul>') +
         (more ? sec("Saved places", "Your original Google Maps list.", more) : "") +
         (priv ? "" : '<p class="info-sub">Booking numbers and screenshots aren\'t part of this copy.</p>') +
       '</div>';
@@ -2140,7 +2216,8 @@ body.readonly [data-edit] { display: none !important; }
     if (a.tagName === "SELECT" || (a.tagName === "INPUT" && a.type === "checkbox")) return; // handled on change
     switch (act) {
       case "tab": selectDay(Number(a.dataset.i)); break;
-      case "tab-info": selectInfo(); break;
+      case "tab-info": selectInfo(); window.scrollTo({ top: Math.max(0, $("#tabs-scroll").getBoundingClientRect().top + scrollY - 8), behavior: reduced ? "auto" : "smooth" }); break;
+      case "theme": applyTheme({ auto: "light", light: "dark", dark: "auto" }[ui.theme]); savePrefs(); break;
       case "shot": openShot(Number(a.dataset.i)); break;
       case "copy": copyText(a.dataset.v || "", a); break;
       case "open-planb":
@@ -2418,6 +2495,7 @@ body.readonly [data-edit] { display: none !important; }
 
   /* ---------- boot ---------- */
   function boot() {
+    applyTheme(loadPrefs().theme);
     var tripP = fetch("trip.json", { cache: "no-store" }).then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.text();
