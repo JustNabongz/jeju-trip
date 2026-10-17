@@ -783,7 +783,7 @@ body { font-size: 16px; line-height: 1.6; }
       lng: validLng(s.lng) ? Number(s.lng) : null
     };
     if (s.mine) o.mine = true;
-    if (isStop && (s.via === "taxi" || s.via === "shuttle")) o.via = s.via;
+    if (isStop && (s.via === "taxi" || s.via === "shuttle" || s.via === "walk")) o.via = s.via;
     if (isStop) {
       o.time = /^\d{2}:\d{2}$/.test(s.time || "") ? s.time : ""; o.done = !!s.done;
       if (Array.isArray(s.options) && s.options.length) {
@@ -958,6 +958,12 @@ body { font-size: 16px; line-height: 1.6; }
     var km = d * 1.3;
     return { kind: "est", min: Math.round(km / 42 * 60 + 3), km: Math.round(km * 10) / 10 };
   }
+  // A stop marked "walk" is reached on foot whatever the usual distance rule says.
+  function walkLeg(a, b) {
+    if (!hasLoc(a) || !hasLoc(b)) return null;
+    var d = hav(a, b);
+    return d < 0.05 ? null : { kind: "walk", min: Math.max(3, Math.ceil(d * 1.3 / 4.5 * 60)), km: Math.round(d * 13) / 10 };
+  }
   function footAfter(leg, onFoot) {
     if (!leg) return onFoot;
     if (leg.via === "taxi") return true; // dropped off, no car
@@ -995,12 +1001,14 @@ body { font-size: 16px; line-height: 1.6; }
   function dayLegs(rows) {
     var out = [], onFoot = false;
     for (var i = 1; i < rows.length; i++) {
-      var l = legBetween(endpoint(rows[i - 1]), endpoint(rows[i]), onFoot);
-      if (l) {
+      var walkTo = rows[i].kind === "stop" && rows[i].stop.via === "walk";
+      var l = walkTo ? walkLeg(endpoint(rows[i - 1]), endpoint(rows[i])) : legBetween(endpoint(rows[i - 1]), endpoint(rows[i]), onFoot);
+      if (l && !walkTo) {
         l.footBefore = onFoot;
         var via = rows[i].kind === "stop" ? rows[i].stop.via : "";
         if (via && (l.kind === "drive" || l.kind === "est")) l.via = via;
       }
+      if (l && walkTo) l.footBefore = onFoot;
       onFoot = footAfter(l, onFoot);
       out.push(l);
     }
@@ -1343,7 +1351,7 @@ body { font-size: 16px; line-height: 1.6; }
       var chosen = s.choice === i, top = i === 0;
       var k = s.id + ":" + i, pref = ui.optOpen[k];
       var open = pref != null ? pref : (chosen || (s.choice == null && top));
-      var leg = prevEnd ? legBetween(prevEnd, { lat: o.lat, lng: o.lng, hotel: false }, footBefore) : null;
+      var leg = !prevEnd ? null : s.via === "walk" ? walkLeg(prevEnd, o) : legBetween(prevEnd, { lat: o.lat, lng: o.lng, hotel: false }, footBefore);
       var legTxt = !leg ? "" : leg.kind === "walk" ? "Walk " + leg.min + " min" : leg.kind === "ride" ? "E-bike " + leg.min + " min" :
         leg.kind === "ferry" ? "Ferry" : (leg.kind === "est" ? "About " : "") + fmtMins(leg.min) + " drive";
       var meta = [o.dish, o.price, o.hours].filter(Boolean).map(esc).join(" · ");

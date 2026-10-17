@@ -716,7 +716,111 @@
     },
     {
      "id": "s11",
-     "time": "19:55",
+     "time": "20:00",
+     "name": "Dessert near the hotel",
+     "ko": "",
+     "naverId": "",
+     "type": "cafe",
+     "area": "Seongsan, by the hotel",
+     "mins": 30,
+     "cost": 0,
+     "note": "Optional after a long first day. All five are open until at least 21:00 tonight.",
+     "lat": null,
+     "lng": null,
+     "done": false,
+     "slot": "d1_dessert",
+     "options": [
+      {
+       "name": "Horang Horang",
+       "ko": "성산카페 호랑호랑",
+       "naverId": "1920330451",
+       "kakaoId": "",
+       "lat": 33.4496,
+       "lng": 126.9216,
+       "area": "Seongsan, by the hotel",
+       "dish": "Egg tarts, or mango or red-bean snowflake bingsu to share",
+       "price": "Egg tart ₩3,300; bingsu for 2 ₩19,000–21,000; cake ₩8,000",
+       "hours": "Daily 08:00–22:00",
+       "tip": "About 300 m from Playce Camp, so walk.",
+       "why": "1,600 Naver reviews; Naver's summary picks out the egg tarts and the sea view.",
+       "cost": 11000,
+       "tag": "Egg tarts",
+       "id": "o1"
+      },
+      {
+       "name": "Jeil Seongsimdang",
+       "ko": "제일성심당",
+       "naverId": "16952124",
+       "kakaoId": "",
+       "lat": 33.448,
+       "lng": 126.9149,
+       "area": "Seongsan, by the hotel",
+       "dish": "Rice-flour breads, rice-cake doughnuts and salt bread",
+       "price": "₩3,000–6,000 each",
+       "hours": "Daily 07:30–21:50",
+       "tip": "A short walk from Playce Camp. Buy extra for tomorrow's breakfast instead of the 7-Eleven.",
+       "why": "3,285 Naver reviews: 1,784 say the bread is great and 782 that it's good value.",
+       "cost": 6000,
+       "tag": "Bakery",
+       "id": "o2"
+      },
+      {
+       "name": "Haeili Café",
+       "ko": "해일리 카페",
+       "naverId": "1742463886",
+       "kakaoId": "",
+       "lat": 33.4689,
+       "lng": 126.9354,
+       "area": "Seongsan, north shore",
+       "dish": "Signature Haeili latte, or Jeju matcha and black-sesame latte",
+       "price": "Lattes ₩9,000–10,000; teas ₩8,000",
+       "hours": "Daily 09:00–21:00",
+       "tip": "A 5-minute drive towards Ilchulbong; get there by 20:30.",
+       "why": "2,985 Naver reviews; most praise the sea view and the coffee.",
+       "cost": 10000,
+       "tag": "Sea view",
+       "id": "o3"
+      },
+      {
+       "name": "Baskin-Robbins Seongsan",
+       "ko": "배스킨라빈스 제주성산점",
+       "naverId": "1569208344",
+       "kakaoId": "",
+       "lat": 33.4464,
+       "lng": 126.9124,
+       "area": "Seongsan, by the hotel",
+       "dish": "Ice cream, with Korea-only flavours",
+       "price": "Usual Baskin-Robbins prices",
+       "hours": "Daily 10:00–23:00",
+       "tip": "The latest-opening option, on the main road near Playce Camp.",
+       "why": "The safe choice if everything else has closed.",
+       "cost": 5000,
+       "tag": "Open late",
+       "id": "o4"
+      },
+      {
+       "name": "Wolgan Record",
+       "ko": "월간레코드",
+       "naverId": "1045508764",
+       "kakaoId": "",
+       "lat": 33.46,
+       "lng": 126.9307,
+       "area": "Seongsan, by Ilchulbong",
+       "dish": "A record café: a drink with your entry ticket, and vinyl playing",
+       "price": "Entry with a drink; price varies",
+       "hours": "Daily 10:00–22:00, last order 21:00",
+       "tip": "More about the music than the desserts.",
+       "why": "Reviewers praise the interior, the Ilchulbong view and the music.",
+       "cost": 9000,
+       "tag": "Music café",
+       "id": "o5"
+      }
+     ],
+     "choice": null
+    },
+    {
+     "id": "s12",
+     "time": "20:40",
      "name": "Tapau tomorrow's breakfast at 7-Eleven",
      "ko": "세븐일레븐 성산라마다호텔점",
      "naverId": "1718286171",
@@ -821,11 +925,11 @@
   {
    "id": "d2",
    "title": "Udo, the haenyeo show and a tangerine café",
-   "note": "Udo in the morning, back for the haenyeo show, then a tangerine café on the drive west. You're at the resort by about 5 pm, with time to rest before dinner and shopping.",
+   "note": "Udo in the morning, back for the haenyeo show and dessert by Ilchulbong, then a tangerine café on the drive west. You're at the resort by about 5 pm, with time to rest before dinner and shopping.",
    "hero": "udo",
    "stops": [
     {
-     "id": "s12",
+     "id": "s13",
      "time": "07:30",
      "name": "Breakfast in the room",
      "ko": "플레이스 캠프 제주",
@@ -840,7 +944,7 @@
      "done": false
     },
     {
-     "id": "s13",
+     "id": "s14",
      "time": "07:45",
      "name": "Toilet time, then check out",
      "ko": "플레이스 캠프 제주",
@@ -855,7 +959,7 @@
      "done": false
     },
     {
-     "id": "s14",
+     "id": "s15",
      "time": "08:30",
      "name": "Ferry to Udo",
      "ko": "성산포항종합여객터미널",
@@ -871,7 +975,7 @@
      "weather": "A wind-wave advisory can cut the timetable (on 18 Sep 2026 boats ran only until 17:00) or stop it; call 064-782-5670 or 064-782-5671 before going."
     },
     {
-     "id": "s15",
+     "id": "s16",
      "time": "09:10",
      "name": "Seobin Baeksa beach",
      "ko": "산호해수욕장",
@@ -887,7 +991,7 @@
      "photo": "udo"
     },
     {
-     "id": "s16",
+     "id": "s17",
      "time": "09:45",
      "name": "Morning coffee at Hagosudong Beach",
      "ko": "하고수동해수욕장",
@@ -902,7 +1006,7 @@
      "done": false
     },
     {
-     "id": "s17",
+     "id": "s18",
      "time": "10:40",
      "name": "Udobong, the lighthouse and Geommeolle Beach",
      "ko": "우도봉",
@@ -918,7 +1022,7 @@
      "photo": "udobong"
     },
     {
-     "id": "s18",
+     "id": "s19",
      "time": "11:45",
      "name": "Lunch on Udo",
      "ko": "",
@@ -1022,7 +1126,7 @@
      "choice": null
     },
     {
-     "id": "s19",
+     "id": "s20",
      "time": "13:10",
      "name": "Ferry back to Seongsan Port",
      "ko": "성산포항종합여객터미널",
@@ -1038,7 +1142,7 @@
      "weather": "A wind-wave advisory can cut the timetable (on 18 Sep 2026 boats ran only until 17:00) or stop it; call 064-782-5670 or 064-782-5671 before going."
     },
     {
-     "id": "s20",
+     "id": "s21",
      "time": "13:30",
      "name": "Haenyeo diving show",
      "ko": "성산포 해녀물질공연장",
@@ -1056,8 +1160,113 @@
      "photo": "haenyeo"
     },
     {
-     "id": "s21",
-     "time": "15:35",
+     "id": "s22",
+     "time": "14:40",
+     "name": "Dessert by Ilchulbong",
+     "ko": "",
+     "naverId": "",
+     "type": "cafe",
+     "area": "Seongsan, by Ilchulbong",
+     "mins": 30,
+     "cost": 0,
+     "note": "All five are a few minutes' walk from the show, so leave the car where it is.",
+     "lat": null,
+     "lng": null,
+     "done": false,
+     "slot": "d2_dessert",
+     "options": [
+      {
+       "name": "Jeju Samchun Donut",
+       "ko": "제주삼춘도넛 성산점",
+       "naverId": "1140365138",
+       "kakaoId": "",
+       "lat": 33.4621,
+       "lng": 126.9348,
+       "area": "Seongsan, by Ilchulbong",
+       "dish": "Jeju lemon cream doughnut with a hallabong ade",
+       "price": "Doughnuts from ₩3,900; hallabong ade ₩5,900",
+       "hours": "Daily 09:00–19:00",
+       "tip": "Upstairs on Ilchul-ro, a 5-minute walk from the show.",
+       "why": "2,064 Naver reviews, and 1,021 of them say the desserts are great.",
+       "cost": 9800,
+       "tag": "Doughnuts",
+       "id": "o1"
+      },
+      {
+       "name": "Seongsan Gwajajeom",
+       "ko": "성산과자점",
+       "naverId": "1449143428",
+       "kakaoId": "",
+       "lat": 33.463,
+       "lng": 126.9352,
+       "area": "Seongsan, by Ilchulbong",
+       "dish": "Chulbong Sand, cookies shaped like Ilchulbong",
+       "price": "9-piece box ₩15,000; hairtail-shaped chocolates ₩22,000",
+       "hours": "Daily 07:00–19:00",
+       "tip": "Mostly boxes to take away, so it doubles as your souvenir stop.",
+       "why": "1,512 Naver reviews, and 1,217 say the desserts are great, the most of any place nearby.",
+       "cost": 15000,
+       "tag": "Souvenir sweets",
+       "id": "o2"
+      },
+      {
+       "name": "Fritz Coffee, Seongsan",
+       "ko": "프릳츠 제주성산점",
+       "naverId": "1647560156",
+       "kakaoId": "",
+       "lat": 33.4595,
+       "lng": 126.9301,
+       "area": "Seongsan, by Ilchulbong",
+       "dish": "Fritz's pastries and bread with a flat white, looking at Ilchulbong",
+       "price": "Coffee ₩5,700–6,800",
+       "hours": "Daily 08:00–19:00",
+       "tip": "About a 15-minute walk, the furthest of the five; the Ilchulbong view is the reason to go.",
+       "why": "2,057 Naver reviews: 1,574 praise the coffee, 1,175 the view and 903 the desserts.",
+       "cost": 12000,
+       "tag": "Bakery café",
+       "id": "o3"
+      },
+      {
+       "name": "Seongsan Haena",
+       "ko": "성산해나",
+       "naverId": "1892211436",
+       "kakaoId": "",
+       "lat": 33.4625,
+       "lng": 126.9329,
+       "area": "Seongsan, by Ilchulbong",
+       "dish": "Homemade cakes and desserts with coffee",
+       "price": "Americano ₩4,300",
+       "hours": "Sun 11:00–17:00",
+       "tip": "Closes at 17:00 on Sunday, so it suits straight after the show.",
+       "why": "1,089 Naver reviews, and 784 say the desserts are great.",
+       "cost": 10000,
+       "tag": "Cakes",
+       "id": "o4"
+      },
+      {
+       "name": "Suma",
+       "ko": "수마",
+       "naverId": "1493269337",
+       "kakaoId": "",
+       "lat": 33.461,
+       "lng": 126.9339,
+       "area": "Seongsan, by Ilchulbong",
+       "dish": "Roasted-chestnut basque cheesecake with a Suma latte",
+       "price": "Coffee ₩5,000–7,500",
+       "hours": "Sun 10:00–17:00 (closed Saturday 17 Oct)",
+       "tip": "Open on Sunday only this weekend.",
+       "why": "666 Naver reviews; Naver's summary singles out the chestnut basque cheesecake.",
+       "cost": 13000,
+       "tag": "Cheesecake",
+       "id": "o5"
+      }
+     ],
+     "choice": null,
+     "via": "walk"
+    },
+    {
+     "id": "s23",
+     "time": "16:15",
      "name": "Afternoon coffee at Gyul Han Pyeon",
      "ko": "카페 귤한편",
      "naverId": "1207810469",
@@ -1073,14 +1282,14 @@
      "photo": "gyul"
     },
     {
-     "id": "s22",
-     "time": "17:00",
+     "id": "s24",
+     "time": "17:40",
      "name": "Check in and rest",
      "ko": "제주신화월드 메리어트 리조트",
      "naverId": "1513281659",
      "type": "stay",
      "area": "Andeok",
-     "mins": 60,
+     "mins": 40,
      "cost": 0,
      "note": "Home for 2 nights. Pool or a nap before dinner.",
      "lat": 33.3074,
@@ -1088,7 +1297,7 @@
      "done": false
     },
     {
-     "id": "s23",
+     "id": "s25",
      "time": "18:30",
      "name": "Dinner at the resort",
      "ko": "",
@@ -1192,7 +1401,7 @@
      "choice": null
     },
     {
-     "id": "s24",
+     "id": "s26",
      "time": "19:35",
      "name": "Night shopping near the hotel",
      "ko": "",
@@ -1391,7 +1600,7 @@
    "hero": "sinchang",
    "stops": [
     {
-     "id": "s25",
+     "id": "s27",
      "time": "08:30",
      "name": "Breakfast at the hotel",
      "ko": "제주신화월드 메리어트 리조트",
@@ -1406,7 +1615,7 @@
      "done": false
     },
     {
-     "id": "s26",
+     "id": "s28",
      "time": "09:30",
      "name": "Toilet time",
      "ko": "제주신화월드 메리어트 리조트",
@@ -1421,7 +1630,7 @@
      "done": false
     },
     {
-     "id": "s27",
+     "id": "s29",
      "time": "10:20",
      "name": "Morning coffee at Cafe Bonte",
      "ko": "Cafe bonte",
@@ -1436,7 +1645,7 @@
      "done": false
     },
     {
-     "id": "s28",
+     "id": "s30",
      "time": "10:45",
      "name": "Bonte Museum",
      "ko": "본태박물관",
@@ -1453,7 +1662,7 @@
      "photo": "bonte"
     },
     {
-     "id": "s29",
+     "id": "s31",
      "time": "12:20",
      "name": "O'sulloc Tea Museum",
      "ko": "오설록 티뮤지엄",
@@ -1470,7 +1679,7 @@
      "photo": "osulloc"
     },
     {
-     "id": "s30",
+     "id": "s32",
      "time": "13:45",
      "name": "Lunch",
      "ko": "",
@@ -1574,7 +1783,7 @@
      "choice": null
     },
     {
-     "id": "s31",
+     "id": "s33",
      "time": "15:00",
      "name": "Songaksan Viewpoint",
      "ko": "송악산",
@@ -1592,7 +1801,7 @@
      "photo": "songaksan"
     },
     {
-     "id": "s32",
+     "id": "s34",
      "time": "16:50",
      "name": "Afternoon coffee near the windmills",
      "ko": "",
@@ -1696,7 +1905,7 @@
      "choice": null
     },
     {
-     "id": "s33",
+     "id": "s35",
      "time": "17:30",
      "name": "Sunset on the Sinchang windmill coast",
      "ko": "신창풍차해안도로",
@@ -1714,7 +1923,7 @@
      "photo": "sinchang"
     },
     {
-     "id": "s34",
+     "id": "s36",
      "time": "18:35",
      "name": "Dinner",
      "ko": "",
@@ -1913,7 +2122,7 @@
    "hero": "aewol",
    "stops": [
     {
-     "id": "s35",
+     "id": "s37",
      "time": "09:00",
      "name": "Breakfast at the hotel",
      "ko": "제주신화월드 메리어트 리조트",
@@ -1928,7 +2137,7 @@
      "done": false
     },
     {
-     "id": "s36",
+     "id": "s38",
      "time": "10:00",
      "name": "Toilet time, then check out",
      "ko": "제주신화월드 메리어트 리조트",
@@ -1943,7 +2152,7 @@
      "done": false
     },
     {
-     "id": "s37",
+     "id": "s39",
      "time": "10:55",
      "name": "Jusangjeolli Cliff",
      "ko": "대포주상절리",
@@ -1961,7 +2170,7 @@
      "photo": "jusang"
     },
     {
-     "id": "s38",
+     "id": "s40",
      "time": "11:35",
      "name": "Morning coffee near Jusangjeolli",
      "ko": "",
@@ -2065,7 +2274,7 @@
      "choice": null
     },
     {
-     "id": "s39",
+     "id": "s41",
      "time": "12:25",
      "name": "Cheonjiyeon Waterfall",
      "ko": "천지연폭포",
@@ -2083,7 +2292,7 @@
      "photo": "cheonjiyeon"
     },
     {
-     "id": "s40",
+     "id": "s42",
      "time": "13:15",
      "name": "Lunch at Olle Market, Seogwipo",
      "ko": "",
@@ -2188,7 +2397,7 @@
      "photo": "olle"
     },
     {
-     "id": "s41",
+     "id": "s43",
      "time": "15:20",
      "name": "Afternoon coffee on Aewol Cafe Street",
      "ko": "",
@@ -2294,7 +2503,7 @@
      "photo": "aewol"
     },
     {
-     "id": "s42",
+     "id": "s44",
      "time": "17:15",
      "name": "Fill up at S-OIL Seonghwa",
      "ko": "S-OIL 성화주유소",
@@ -2309,7 +2518,7 @@
      "done": false
     },
     {
-     "id": "s43",
+     "id": "s45",
      "time": "17:35",
      "name": "Return the car at LOTTE Jeju Autohouse",
      "ko": "롯데렌터카 제주 오토하우스",
@@ -2324,7 +2533,7 @@
      "done": false
     },
     {
-     "id": "s44",
+     "id": "s46",
      "time": "18:05",
      "name": "Taxi to the Sheraton, check in and rest",
      "ko": "쉐라톤 제주 호텔",
@@ -2340,7 +2549,7 @@
      "via": "taxi"
     },
     {
-     "id": "s45",
+     "id": "s47",
      "time": "19:00",
      "name": "Dinner in Jeju City",
      "ko": "",
@@ -2540,7 +2749,7 @@
    "hero": "",
    "stops": [
     {
-     "id": "s46",
+     "id": "s48",
      "time": "06:30",
      "name": "Breakfast at the hotel",
      "ko": "쉐라톤 제주 호텔",
@@ -2555,7 +2764,7 @@
      "done": false
     },
     {
-     "id": "s47",
+     "id": "s49",
      "time": "07:00",
      "name": "Toilet time, then check out",
      "ko": "쉐라톤 제주 호텔",
@@ -2570,7 +2779,7 @@
      "done": false
     },
     {
-     "id": "s48",
+     "id": "s50",
      "time": "07:45",
      "name": "Check in and go through security",
      "ko": "제주국제공항",
@@ -2586,7 +2795,7 @@
      "via": "taxi"
     },
     {
-     "id": "s49",
+     "id": "s51",
      "time": "09:30",
      "name": "Fly home on TR829",
      "ko": "제주국제공항",
